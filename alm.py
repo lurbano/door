@@ -4,4 +4,4 @@
 import time
 import os
 
-os.system("bbc_comedy-sou_07005034.mp3")
+os.system("cvlc --play-and-exit bbc_comedy-sou_07005034.mp3")
