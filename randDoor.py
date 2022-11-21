@@ -35,7 +35,7 @@ while True:
                         print("closed")
                 else:
                         print("open")
-                        soundFile = f"/home/pi/door/sound/{random.choice(filelist)}"
+                        soundFile = f"/home/pi/door/sounds/{random.choice(filelist)}"
                         os.system(f"cvlc --play-and-exit {soundFile}")
 
         time.sleep(0.05)
