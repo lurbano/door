@@ -8,10 +8,7 @@ import subprocess
 import board
 import digitalio
 import random
-import neopixel
 
-nPix = 20
-pixels = neopixel.NeoPixel(board.D21, 20)
 
 
 
@@ -38,13 +35,12 @@ while True:
                 isopen = s1.value
                 if isopen == True:
                         print("closed")
-                        for i in range(nPix):
-                            pixels[i] = (100,0,0)
+                        
                 else:
                         print("open")
                         soundFile = f"/home/pi/door/sounds/{random.choice(filelist)}"
                         os.system(f"cvlc --play-and-exit {soundFile}")
-                        for i in range(nPix):
-                            pixels[i] = (0,100,0)
+                        os.system(f"sudo /home/pi/door/led_open.py")
+                        
 
         time.sleep(0.05)
