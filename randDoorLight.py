@@ -25,6 +25,7 @@ s1.pull = digitalio.Pull.DOWN
 
 isopen = s1.value
 
+os.system(f"sudo python3 /home/pi/door/led_startup.py")
 
 while True:
         #if (s1.value) == True:
