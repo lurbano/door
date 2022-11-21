@@ -11,6 +11,7 @@ import random
 
 
 
+os.system(f"sudo python3 /home/pi/door/led_startup.py")
 
 os.system('amixer cset numid=1 100%')
 os.system("cvlc --play-and-exit /home/pi/door/sounds/portal_start.mp3")
@@ -25,7 +26,6 @@ s1.pull = digitalio.Pull.DOWN
 
 isopen = s1.value
 
-os.system(f"sudo python3 /home/pi/door/led_startup.py")
 
 while True:
         #if (s1.value) == True:
@@ -39,9 +39,10 @@ while True:
                         os.system(f"sudo python3 /home/pi/door/led_close.py")
                 else:
                         print("open")
+                        os.system(f"sudo python3 /home/pi/door/led_open.py")
                         soundFile = f"/home/pi/door/sounds/{random.choice(filelist)}"
                         os.system(f"cvlc --play-and-exit {soundFile}")
-                        os.system(f"sudo python3 /home/pi/door/led_open.py")
+                        
                         
 
         time.sleep(0.05)
