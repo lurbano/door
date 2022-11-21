@@ -1,5 +1,6 @@
 
 # Note: Julian's file form his portal repository.
+# Randomly play files in the ./sound directory
 
 import time
 import os
@@ -35,6 +36,6 @@ while True:
                 else:
                         print("open")
                         soundFile = f"/home/pi/door/sound/{random.choice(filelist)}"
-                        os.system(f"cvlc --play-and-exit {soundFile})
+                        os.system(f"cvlc --play-and-exit {soundFile}")
 
         time.sleep(0.05)
