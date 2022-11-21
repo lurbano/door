@@ -36,10 +36,10 @@ while True:
                 isopen = s1.value
                 if isopen == True:
                         print("closed")
-                        os.system(f"sudo python3 /home/pi/door/led_close.py")
+                        os.system(f"sudo python3 /home/pi/door/led_close.py &")
                 else:
                         print("open")
-                        os.system(f"sudo python3 /home/pi/door/led_open.py")
+                        os.system(f"sudo python3 /home/pi/door/led_open.py &" )
                         soundFile = f"/home/pi/door/sounds/{random.choice(filelist)}"
                         os.system(f"cvlc --play-and-exit {soundFile}")
                         
