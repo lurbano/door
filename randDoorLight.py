@@ -11,7 +11,7 @@ import random
 
 
 
-os.system(f"sudo python3 /home/pi/door/led_startup.py")
+os.system(f"sudo python3 /home/pi/door/led_startup.py &")
 
 os.system('amixer cset numid=1 100%')
 os.system("cvlc --play-and-exit /home/pi/door/sounds/portal_start.mp3")
