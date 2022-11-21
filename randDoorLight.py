@@ -36,7 +36,7 @@ while True:
                 isopen = s1.value
                 if isopen == True:
                         print("closed")
-                        
+                        os.system(f"sudo python3 /home/pi/door/led_close.py")
                 else:
                         print("open")
                         soundFile = f"/home/pi/door/sounds/{random.choice(filelist)}"
